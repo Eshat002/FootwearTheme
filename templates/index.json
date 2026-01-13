@@ -12,12 +12,7 @@
     "banner": {
       "type": "banner",
       "settings": {}
-    },
-    "banner_FJjXcq": {
-      "type": "banners",
-      "name": "Banner",
-      "settings": {}
     }
   },
-  "order": ["banner", "banner_FJjXcq"]
+  "order": ["banner"]
 }
