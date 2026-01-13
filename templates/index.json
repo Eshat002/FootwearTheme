@@ -10,9 +10,9 @@
 {
   "sections": {
     "banner": {
-      "type": "banner",
+      "type": "cow",
       "settings": {}
     }
   },
-  "order": ["banner"]
+  "order": ["cow"]
 }
