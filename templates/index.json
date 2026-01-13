@@ -1,35 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
-  "sections": {
-    "main": {
-      "type": "hello-world",
+  "section": {
+    "banner": {
+      "type": "banner",
       "settings": {}
-    },
-    "custom_section_QpxaUU": {
-      "type": "custom-section",
-      "name": "t:general.custom_section",
-      "settings": {}
-    },
-    "collections_ahazAc": {
-      "type": "collections",
-      "name": "t:general.collections_grid",
-      "settings": {
-        "grid_item_width": "collections--full",
-        "grid_gap": 10
-      }
     }
   },
-  "order": [
-    "main",
-    "custom_section_QpxaUU",
-    "collections_ahazAc"
-  ]
+
+  "order": ["banner"]
 }
