@@ -14,13 +14,10 @@
       "settings": {}
     },
     "banner_FJjXcq": {
-      "type": "banner",
+      "type": "banners",
       "name": "Banner",
       "settings": {}
     }
   },
-  "order": [
-    "banner",
-    "banner_FJjXcq"
-  ]
+  "order": ["banner", "banner_FJjXcq"]
 }
