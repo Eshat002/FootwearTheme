@@ -3,22 +3,7 @@
     "banner": {
       "type": "banner",
       "settings": {}
-<<<<<<< HEAD
     }
   },
-
   "order": ["banner"]
-=======
-    },
-    "custom_section_QpxaUU": {
-      "type": "custom-section",
-      "name": "t:general.custom_section",
-      "settings": {}
-    }
-  },
-  "order": [
-    "main",
-    "custom_section_QpxaUU"
-  ]
->>>>>>> 83dab2f4fdf426d889a2da7db361ae4d61fef858
 }
