@@ -9,6 +9,14 @@
  */
 {
   "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show-announcementbar": true
+        }
+      }
+    },
     "content_for_index": []
   },
   "platform_customizations": {
