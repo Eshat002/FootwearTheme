@@ -27,10 +27,11 @@
   </head>
 
   <body>
-    {% sections 'header-group' %}
-
+   {% section 'announcement-bar' %}
+     <main id="id" role="main">
     {{ content_for_layout }}
-
-    {% sections 'footer-group' %}
+     </main>
+ 
+   
   </body>
 </html>
