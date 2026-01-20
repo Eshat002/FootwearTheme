@@ -1,38 +1,71 @@
+{% if section.settings['show-announcementbar'] %}
+  <section>
+    <div class="announcement-bar">
+      <div class="announcement-bar-left-section">
+        {% if section.settings.image != blank %}
+          <img width="40" height="40" loading="lazy" src="{{section.settings.image | image_url }}" alt="image">
+        {% else %}
+          <img width="40" height="40" loading="lazy" src="{{'a.png' | asset_url}}" alt="image">
+        {% endif %}
 
- {% if section.settings['show-announcementbar'] %}
-
-<section>
- Announcement Bar
-</section>
-
+        {% if section.settings.image2 != blank %}
+          <img width="40" height="40" loading="lazy" src="{{section.settings.image2 | image_url }}" alt="image2">
+        {% else %}
+          <img width="40" height="40" loading="lazy" src="{{'a.png' | asset_url}}" alt="image">
+        {% endif %}
+      </div>
+      <div class="announcementbar-right-section">right section</div>
+    </div>
+  </section>
 {% endif %}
 
+{% style %}
+  .announcement-bar-left-section {
+    display: flex !important;
+  }
+
+  .announcement-bar{
+    background:  {{section.settings.background}};
+    color: {{section.settings.text_color}}
+  }
+{% endstyle %}
+
 {% schema %}
-
 {
+  "name": "announcement-bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-announcementbar",
+      "label": "Show Announcementbar",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Pick Image",
+      "info": "png recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Pick Second Image",
+      "info": "png recommended"
+    },
 
-"name": "announcement-bar",
-"settings": [
+    {
+      "type": "color",
 
- {
-
-"type": "checkbox",
- "id": "show-announcementbar",
- "label": "Show Announcementbar",
- "default": true,
-
-
+      "id": "background",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#000000" }
+  ],
+  "presets": [
+    {
+      "name": "announcement-bar"
+    }
+  ]
 }
-
-],
-"presets": [
- {
- "name": "announcement-bar"
-}
-   
-]
-
-}
-
 {% endschema %}
-
