@@ -16,9 +16,13 @@
           "show-announcementbar": true,
           "image": "shopify://shop_images/sport-shoe_80807.png",
           "image2": "shopify://shop_images/running-shoe_5479005.png",
-          "background": "#a7a7a7",
+          "background": "#ac0c0c",
           "text_color": "#ffffff"
         }
+      },
+      "header": {
+        "type": "header",
+        "settings": {}
       }
     },
     "content_for_index": []
