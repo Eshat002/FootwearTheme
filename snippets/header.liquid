@@ -6,6 +6,12 @@
       <img width="70" height="50" loading="lazy" src="{{'logo.png' |  asset_url}}" alt="logo">
     </a>
   </div>
-  <div></div>
+  <div>
+    <ul class="middle-area-navbar">
+      {% for link in linklists['main-menu-1'].links %}
+        <li>{{ link.title | link_to: link.url }}</li>
+      {% endfor %}
+    </ul>
+  </div>
   <div></div>
 </header>
