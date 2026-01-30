@@ -1,4 +1,4 @@
-<header>
+<header class="header-nav">
   <div>
     <a
       href="/"
@@ -24,3 +24,38 @@
     </a>
   </div>
 </header>
+
+{% style %}
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .middle-area-navbar {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+  }
+
+  .middle-area-navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+
+  .middle-area-navbar a:hover {
+    color: blue;
+  }
+
+  .right-nav-items {
+    display: flex;
+    gap: 10px;
+  }
+  .search-nav {
+    background: #f0f0f0;
+    border-radius: 15px;
+    padding: 10px;
+    border: none;
+  }
+{% endstyle %}
