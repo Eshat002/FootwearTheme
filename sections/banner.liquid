@@ -1,11 +1,35 @@
 <section>
-  <div class="banner-wrapper">banner</div>
+  <div class="banner-wrapper">
+    <div class="swiper banner-swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            {{ block.settings.slide_text }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
   .banner-wrapper{
-    background-color: {{section.settings.background}};
-    color: {{section.settings.text_color}}
+            background-color: {{section.settings.background}};
+            color: {{section.settings.text_color}}
+          }
+  .banner-swiper {
+    width: 100%;
+    height: 40px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .banner-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
   }
 </style>
 
@@ -26,6 +50,22 @@
       "default": "#000000"
     }
   ],
+
+  "blocks": [
+    {
+      "type": "banner-text",
+      "name": "Banner Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_text",
+          "label": "Slide Text",
+          "default": "Free shipings and returns "
+        }
+      ]
+    }
+  ],
+
   "presets": [{ "name": "Banner" }]
 }
 {% endschema %}

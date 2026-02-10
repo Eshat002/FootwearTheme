@@ -4,6 +4,9 @@
     {{ content_for_header }}
 
     {{ 'theme.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
 
   <body>
@@ -12,5 +15,6 @@
     <main id="id" role="main">
       {{ content_for_layout }}
     </main>
+    {{ 'theme.js' | asset_url | script_tag }}
   </body>
 </html>
