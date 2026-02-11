@@ -3,11 +3,11 @@
     "banner": {
       "type": "banner",
       "settings": {}
+    },
+    "three-images": {
+      "type": "three-images",
+      "settings": {}
     }
-    // "three-images": {
-    //   "type": "three-images",
-    //   "settings": {}
-    // },
 
     // "more-info": {
     //   "type": "more-info",
@@ -23,8 +23,8 @@
     // }
   },
   "order": [
-    "banner"
-    // "three-images",
+    "banner",
+    "three-images"
     // "more-info",
     // "all-collections"
     // "all-products"
