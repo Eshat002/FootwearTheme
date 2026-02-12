@@ -1,0 +1,39 @@
+<section class="more-info">
+  <div class="more-info-wrapper">
+    <h1>{{ section.settings.text }}</h1>
+    <p>{{ section.settings.text2 }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "More Info",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "more_info_text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Section heading"
+    },
+
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Text2",
+      "default": "section text"
+    }
+  ]
+}
+{% endschema %}
