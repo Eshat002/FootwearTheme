@@ -1,11 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "banner",
-      "settings": {}
+      "settings": {
+        "background": "#ffffff",
+        "text_color": "#000000"
+      }
     },
     "three-images": {
       "type": "three-images",
+<<<<<<< HEAD
       "settings": {}
     },
 
@@ -28,5 +41,17 @@
     "more-info"
     // "all-collections"
     // "all-products"
+=======
+      "settings": {
+        "image": "shopify://shop_images/close-up-futuristic-sneakers_1.jpg",
+        "image2": "shopify://shop_images/colorful-sneaker-is-being-spray-painted-with-purple-spray-paint.jpg",
+        "image3": "shopify://shop_images/close-up-futuristic-sneakers.jpg"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "three-images"
+>>>>>>> 185ad3b34c4fc662022828589f080e92b0ae474e
   ]
 }
