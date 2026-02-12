@@ -20,25 +20,19 @@
       "type": "three-images",
       "settings": {}
     },
-
     "more-info": {
       "type": "more-info",
-      "settings": {}
+      "settings": {
+        "background": "#f71c1c",
+        "more_info_text_color": "#f90e0e",
+        "text": "Section heading 7777",
+        "text2": "sdffdsfsf"
+      }
     }
-    // "all-collections": {
-    //   "type": "all-collections",
-    //   "settings": {}
-    // },
-    // "all-products": {
-    //   "type": "all-products",
-    //   "settings": {}
-    // }
   },
   "order": [
     "banner",
     "three-images",
     "more-info"
-    // "all-collections"
-    // "all-products"
   ]
 }
