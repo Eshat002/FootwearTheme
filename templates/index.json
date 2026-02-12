@@ -18,7 +18,11 @@
     },
     "three-images": {
       "type": "three-images",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/colorful-sneaker-is-being-spray-painted-with-purple-spray-paint.jpg",
+        "image2": "shopify://shop_images/close-up-futuristic-sneakers.jpg",
+        "image3": "shopify://shop_images/close-up-futuristic-sneakers_1.jpg"
+      }
     },
     "more-info": {
       "type": "more-info",
