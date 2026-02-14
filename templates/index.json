@@ -18,27 +18,25 @@
     },
     "three-images": {
       "type": "three-images",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/colorful-sneaker-is-being-spray-painted-with-purple-spray-paint.jpg",
+        "image2": "shopify://shop_images/close-up-futuristic-sneakers.jpg",
+        "image3": "shopify://shop_images/close-up-futuristic-sneakers_1.jpg"
+      }
     },
-
     "more-info": {
       "type": "more-info",
-      "settings": {}
+      "settings": {
+        "background": "#f71c1c",
+        "more_info_text_color": "#f90e0e",
+        "text": "Section heading 7777",
+        "text2": "sdffdsfsf"
+      }
     }
-    // "all-collections": {
-    //   "type": "all-collections",
-    //   "settings": {}
-    // },
-    // "all-products": {
-    //   "type": "all-products",
-    //   "settings": {}
-    // }
   },
   "order": [
     "banner",
     "three-images",
     "more-info"
-    // "all-collections"
-    // "all-products"
   ]
 }
