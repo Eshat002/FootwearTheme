@@ -32,11 +32,11 @@
         "text": "Section heading 7777",
         "text2": "sdffdsfsf"
       }
+    },
+    "all-collections": {
+      "type": "all-collections",
+      "settings": {}
     }
   },
-  "order": [
-    "banner",
-    "three-images",
-    "more-info"
-  ]
+  "order": ["banner", "three-images", "more-info", "all-collections"]
 }
