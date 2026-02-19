@@ -3,11 +3,44 @@
   <div class="collection-container">
     <div class="collection-wrapper">
       {% for collection in collections %}
-        <h3>{{ collection.title | link_to: collection.url }}</h3>
+        <div class="collection-card">
+          <img loading="lazy" width="300" height="300" src="{{collection.featured_image | image_url}}">
+          <h3>{{ collection.title | link_to: collection.url }}</h3>
+        </div>
       {% endfor %}
     </div>
   </div>
 </section>
+
+<style>
+    .all-collections{
+      background-color: {{section.settings.background}};
+      color: {{section.settings.text_color}};
+      padding: 10px;
+    }
+    .collection-container{
+
+    position: relative;
+    overflow-x: scroll;
+
+    }
+    .collection-wrapper{
+      display: flex;
+      transition: transform 0.3 ease;
+    }
+
+  .collection-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .collection-card h3 a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
 
 {% schema %}
 {
