@@ -1,0 +1,63 @@
+<section class="featured-collection">
+  <h1>Featured Collection</h1>
+  <div class="featured-collection-container">
+    <div class="featured-collection-wrapper">
+      {% for product in collections['best-seller'].products %}
+        <div class="product-card">
+          <img loading="lazy" width="300" height="300" src="{{product.featured_image | image_url}}">
+          <h3>{{ product.title | link_to: product.url }}</h3>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+    .featured-products {
+      background-color: {{section.settings.background}};
+      color: {{section.settings.text_color}};
+      padding: 10px;
+    }
+    .featured-collection-container{
+
+    position: relative;
+    overflow-x: scroll;
+
+    }
+    .featured-collection-wrapper{
+      display: flex;
+      transition: transform 0.3 ease;
+    }
+
+  .product-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-card h3 a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "featured-collection",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}
