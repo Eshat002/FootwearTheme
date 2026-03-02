@@ -1,0 +1,80 @@
+<section class="collection-page">
+  <div class="page-width">
+    <!-- Collection Title -->
+    <h1>{{ collection.title }}</h1>
+
+    {% if collection.description != blank %}
+      <div class="collection-description">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+
+    <!-- Sorting Form -->
+    <form method="get" class="collection-sort">
+      <select name="sort_by" onchange="this.form.submit()">
+        {% for option in collection.sort_options %}
+          <option
+            value="{{ option.value }}"
+            {% if option.value == collection.sort_by %}
+              selected
+            {% endif %}
+          >
+            {{ option.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </form>
+
+    <!-- Product Grid -->
+    <div class="collection-grid">
+      {% paginate collection.products by 3 %}
+        {% for product in collection.products %}
+          <div class="product-card">
+            <a href="{{ product.url }}">
+              {% if product.featured_image %}
+                <img
+                  src="{{ product.featured_image | image_url: width: 600 }}"
+                  alt="{{ product.title }}"
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                >
+              {% endif %}
+            </a>
+
+            <h3>
+              <a href="{{ product.url }}">
+                {{ product.title }}
+              </a>
+            </h3>
+
+            <p>{{ product.price | money }}</p>
+          </div>
+        {% else %}
+          <p>No products found.</p>
+        {% endfor %}
+
+        {{ paginate | default_pagination }}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+<style>
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Main Collection",
+  "settings": []
+}
+{% endschema %}
