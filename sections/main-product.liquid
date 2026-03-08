@@ -1,0 +1,71 @@
+<section class="product-page">
+  <div class="page-width">
+    <div class="product-grid">
+      <!-- Product Images -->
+      <div class="product-images">
+        {% for image in product.images %}
+          {{ product | image_url: width: 400 | image_tag }}
+        {% endfor %}
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <!-- Title -->
+        <h1>{{ product.title }}</h1>
+
+        <!-- Price -->
+        <p class="product-price">
+          {{ product.price | money }}
+        </p>
+
+        <!-- Description -->
+        <div class="product-description">
+          {{ product.description }}
+        </div>
+
+        <!-- Product Form -->
+        <div class="product-form">
+          {% form 'product', product %}
+            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+            <label for="quantity">Quantity</label>
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              value="1"
+              min="1"
+            >
+
+            <button type="submit">Add to Cart</button>
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .product-images img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .add-to-cart {
+    background: black;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
