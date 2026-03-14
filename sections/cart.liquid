@@ -1,37 +1,129 @@
-{% comment %}
-  This section is used in the cart template to render /cart page with an
-  overview of the items in customer's cart.
+<div class="page-width">
+  <h1>Your Cart ({{ cart.item_count }})</h1>
 
-  https://shopify.dev/docs/storefronts/themes/architecture/templates/cart
-{% endcomment %}
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
 
-<h1>{{ 'cart.title' | t }}</h1>
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td class="cart-product">
+                {{ item.image | image_url: width: 100 | image_tag }}
+                <div>
+                  <p>{{ item.product.title }}</p>
+                  <small>{{ item.variant.title }}</small>
+                </div>
+              </td>
 
-<form action="{{ routes.cart_url }}" method="post">
-  <table>
-    {% for item in cart.items %}
-      <tr>
-        <td>
-          {% render 'image', image: item.image, url: item.url %}
-        </td>
-        <td>
-          <p>{{ item.product.title }}</p>
-          {{ 'cart.remove' | t | link_to: item.url_to_remove }}
-        </td>
-        <td>
-          <input type="text" name="updates[]" value="{{ item.quantity }}">
-          <input type="submit" value="{{ 'cart.update' | t }}">
-        </td>
-      </tr>
-    {% endfor %}
-  </table>
+              <td>
+                {{ item.price | money }}
+              </td>
 
-  <input type="submit" name="checkout" value="{{ 'cart.checkout' | t }}">
-</form>
+              <td>
+                <input
+                  type="number"
+                  name="updates[]"
+                  value="{{ item.quantity }}"
+                  min="0"
+                >
+              </td>
 
-{% schema %}
-{
-  "name": "t:general.cart",
-  "settings": []
-}
-{% endschema %}
+              <td>
+                {{ item.line_price | money }}
+              </td>
+
+              <td>
+                <a
+                  href="{{ routes.cart_change_url }}?id={{ item.key }}&quantity=0"
+                  class="remove-btn"
+                >
+                  Remove
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="cart-summary">
+        <p>Total Items: {{ cart.item_count }}</p>
+
+        <h3>Subtotal</h3>
+        <p>{{ cart.total_price | money }}</p>
+
+        <button
+          type="submit"
+          name="update"
+          class="btn"
+        >
+          Update Cart
+        </button>
+
+        <button
+          type="submit"
+          name="checkout"
+          class="btn btn-primary"
+        >
+          Proceed to Checkout
+        </button>
+      </div>
+    </form>
+  {% else %}
+    <p>Your cart is empty.</p>
+  {% endif %}
+</div>
+
+<style>
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .cart-product {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .cart-summary {
+    margin-top: 30px;
+    text-align: right;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: black;
+    color: white;
+  }
+
+  .remove-btn {
+    color: red;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .remove-btn:hover {
+    text-decoration: underline;
+  }
+</style>
