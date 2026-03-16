@@ -30,7 +30,11 @@
         "background": "#dcdbdb",
         "more_info_text_color": "#000000",
         "text": "BUY THE BEST SHOES",
+<<<<<<< HEAD
         "text2": "Get 20% discounts of all products. "
+=======
+        "text2": "BUY SHOES AT 20% DISCOUNTS"
+>>>>>>> 491866b5de3595b2f73c057f9b157c497cdc0c59
       }
     },
     "all-collections": {
