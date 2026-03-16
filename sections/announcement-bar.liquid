@@ -17,12 +17,12 @@
       <div class="announcement-bar-right-section">
         <div class="announcement-bar-inner-list">
           {% if section.blocks.size == 0 %}
-            <li><a href="#">Help</a></li>
+            <li><a href="/help">Help</a></li>
             {% if shop.customer_accounts_enabled %}
               {% if customer %}
-                <li><a href="/account">Account</a></li>
+                <li><a href="{{routes.account_profile_url}}">Account</a></li>
               {% else %}
-                <li><a href="/account/login">Login</a></li>
+                <li><a href="{{routes.account_login_url}}">Login</a></li>
               {% endif %}
             {% endif %}
           {% else %}
@@ -42,6 +42,11 @@
   .announcement-bar {
     background: {{ section.settings.background }};
     color: {{ section.settings.text_color }};
+  }
+
+    .announcement-bar  a {
+     text-decoration: none;
+     color:black;
   }
 {%- endstyle -%}
 
